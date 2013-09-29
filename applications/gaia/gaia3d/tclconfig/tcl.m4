@@ -78,6 +78,7 @@ AC_DEFUN(TEA_PATH_TCLCONFIG, [
 			`ls -d /usr/local/lib 2>/dev/null` \
 			`ls -d /usr/contrib/lib 2>/dev/null` \
 			`ls -d /usr/lib 2>/dev/null` \
+			`ls -d /usr/lib64 2>/dev/null` \
 			; do
 		    if test -f "$i/tclConfig.sh" ; then
 			ac_cv_c_tclconfig=`(cd $i; pwd)`
@@ -205,6 +206,7 @@ AC_DEFUN(TEA_PATH_TKCONFIG, [
 			`ls -d /usr/local/lib 2>/dev/null` \
 			`ls -d /usr/contrib/lib 2>/dev/null` \
 			`ls -d /usr/lib 2>/dev/null` \
+			`ls -d /usr/lib64 2>/dev/null` \
 			; do
 		    if test -f "$i/tkConfig.sh" ; then
 			ac_cv_c_tkconfig=`(cd $i; pwd)`
@@ -2266,7 +2268,7 @@ AC_DEFUN(TEA_PATH_UNIX_X, [
     if test "$no_x" = yes; then
 	AC_MSG_CHECKING([for X11 libraries])
 	XLIBSW=nope
-	dirs="/usr/unsupported/lib /usr/local/lib /usr/X386/lib /usr/X11R6/lib /usr/X11R5/lib /usr/lib/X11R5 /usr/lib/X11R4 /usr/openwin/lib /usr/X11/lib /usr/sww/X11/lib"
+	dirs="/usr/unsupported/lib /usr/local/lib /usr/X386/lib /usr/X11R6/lib /usr/X11R5/lib /usr/lib/X11R5 /usr/lib/X11R4 /usr/openwin/lib /usr/X11/lib /usr/sww/X11/lib /usr/lib64"
 	for i in $dirs ; do
 	    if test -r $i/libX11.a -o -r $i/libX11.so -o -r $i/libX11.sl -o -r $i/libX11.dylib -o -r $i/libX11.la -o -r $i/libX11.dll; then
 		AC_MSG_RESULT([$i])
@@ -3282,6 +3284,7 @@ AC_DEFUN(TEA_LIB_SPEC, [
 	    `ls -dr ${tea_lib_name_dir}/$1[[0-9]]*.lib 2>/dev/null ` \
 	    `ls -dr ${tea_lib_name_dir}/lib$1[[0-9]]* 2>/dev/null ` \
 	    `ls -dr /usr/lib/$1[[0-9]]*.lib 2>/dev/null ` \
+	    `ls -dr /usr/lib64/$1[[0-9]]*.lib 2>/dev/null ` \
 	    `ls -dr /usr/lib/lib$1[[0-9]]* 2>/dev/null ` \
 	    `ls -dr /usr/local/lib/$1[[0-9]]*.lib 2>/dev/null ` \
 	    `ls -dr /usr/local/lib/lib$1[[0-9]]* 2>/dev/null ` ; do
@@ -3828,6 +3831,7 @@ AC_DEFUN(TEA_PATH_CONFIG, [
 			`ls -d /usr/local/lib 2>/dev/null` \
 			`ls -d /usr/contrib/lib 2>/dev/null` \
 			`ls -d /usr/lib 2>/dev/null` \
+			`ls -d /usr/lib64 2>/dev/null` \
 			; do
 		    if test -f "$i/$1Config.sh" ; then
 			ac_cv_c_$1config=`(cd $i; pwd)`

@@ -43,4 +43,5 @@ nodist_bin_SCRIPTS = ../gaia/Makefile ../gaia3d/Makefile \
 
 $(MANIFESTS)/skycat:
 	echo "You must build and install Skycat"
-	exit 1
+	exit 0
+

@@ -16,8 +16,6 @@ STAR_PATH_TCLTK(8.5, [tcl])
 
 dnl    But depend on Starlink Tcl to make sure one is always available
 dnl    during the configure stage.
-STAR_DECLARE_DEPENDENCIES(build, [tcl])
-STAR_DECLARE_DEPENDENCIES(configure, [tcl])
 
 AC_CONFIG_FILES([Makefile component.xml])
 

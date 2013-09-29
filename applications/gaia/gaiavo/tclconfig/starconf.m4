@@ -3,6 +3,25 @@
 # original starconf.m4, installed by starconf 1.3, rnum=1003000
 # DO NOT EDIT: it may be overwritten when starconf is next run
 
+#  Copyright:
+#     Copyright (C) 2003-2005 Council for the Central Laboratory of the
+#     Research Councils
+#
+#  Licence:
+#     This program is free software; you can redistribute it and/or
+#     modify it under the terms of the GNU General Public Licence as
+#     published by the Free Software Foundation; either version 2 of
+#     the Licence, or (at your option) any later version.
+#
+#     This program is distributed in the hope that it will be
+#     useful,but WITHOUT ANY WARRANTY; without even the implied
+#     warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+#     PURPOSE. See the GNU General Public Licence for more details.
+#
+#     You should have received a copy of the GNU General Public Licence
+#     along with this program; if not, write to the Free Software
+#     Foundation, Inc., 51 Franklin Street,Fifth Floor, Boston, MA
+#     02110-1301, USA
 
 # STAR_DEFAULTS(options='')
 # -------------------------
@@ -50,17 +69,17 @@ m4_ifdef([_poss_STAR_RESTFP_FIX],
 ## acinclude.m4 file just before running ./bootstrap or autoreconf.
 m4_define([per_dir_PREFIX],   [m4_ifdef([OVERRIDE_PREFIX],
                                         [OVERRIDE_PREFIX],
-                                        [/home/pdraper/starlink_git/build])])
+                                        [/home/joe/local-star])])
 m4_define([per_dir_STARLINK], [m4_ifdef([OVERRIDE_STARLINK],
                                         [OVERRIDE_STARLINK],
-                                        [/home/pdraper/starlink_git/build])])
+                                        [/home/joe/local-star])])
 
 test -n "$_star_per_package_dirs" || _star_per_package_dirs=false
 test -n "$_star_docs_only"        || _star_docs_only=false
 
 
 # Ensure that STARLINK has a value, defaulting to
-# /home/pdraper/starlink_git/build.  Note that this directory may be
+# /home/joe/local-star.  Note that this directory may be
 # different from /star, and reflects the value of
 # STARCONF_DEFAULT_STARLINK that the `starconf' package was configured
 # with before its installation. 
@@ -74,7 +93,7 @@ test -n "$_star_docs_only"        || _star_docs_only=false
 # is possible to make a test version of a new package, using tools
 # from an old installation, but installing in a new place.
 #
-# However, we install software in /home/pdraper/starlink_git/build by
+# However, we install software in /home/joe/local-star by
 # default.  This is so even if $STARLINK and STARCONF_DEFAULT_STARLINK
 # are different, because in this case we are planning to use a
 # previous installation in $STARLINK or $STARCONF_DEFAULT_STARLINK,
@@ -567,7 +586,7 @@ float fred_() {
            $FC $FCFLAGS $opt -o conftest conftest.f c-conftest.$ac_objext 2>&5
            if test -r conftest
            then
-              star_cv_cnf_f2c_compatible=`eval conftest | sed 's/\ //g'` > /dev/null
+              star_cv_cnf_f2c_compatible=`eval ./conftest | sed 's/\ //g'` > /dev/null
            else
               AC_MSG_ERROR([failed to link program]) 
            fi
@@ -776,7 +795,7 @@ C  checks passing 4 byte character string lengths on 64bit compiler.
               $FC $FCFLAGS $opt -o conftest conftest.f 2>&5
               if test -r conftest
               then
-                 star_cv_cnf_trail_type=`eval conftest | sed 's/\ //g'` > /dev/null
+                 star_cv_cnf_trail_type=`eval ./conftest | sed 's/\ //g'` > /dev/null
               else
                  AC_MSG_ERROR([failed to link program]) 
               fi
@@ -860,6 +879,11 @@ dnl  /opt/local and /sw are the default installation locations for OpenDarwin
 dnl  and Fink on OSX
 /opt/local/bin
 /sw/bin'
+              if test -d /usr/lib64 ; then
+                 lib=lib64
+              else
+                 lib=lib
+              fi
               for d in $_star_try_tcldir $STARCONF_DEFAULT_STARLINK/bin $tclsources $stdsources
               do
                   locok=:
@@ -873,15 +897,15 @@ dnl  and Fink on OSX
                       test -f $d/wish -a -f $tcldir/include/tk.h || locok=false
                   fi
                   if $locok && $search_itcl; then
-                      test -f $tcldir/lib/libitcl.aXXX || locok=false
+                      test -f $tcldir/$lib/libitcl.aXXX || locok=false
                   fi
                   if $locok; then
-                       if test ! -f $tcldir/lib/tclConfig.sh; then
-                           echo "$tcldir/lib/tclConfig.sh unexpectedly missing"
+                       if test ! -f $tcldir/$lib/tclConfig.sh; then
+                           echo "$tcldir/$lib/tclConfig.sh unexpectedly missing"
                            break
                        fi
-                       if $search_tk && test ! -f $tcldir/lib/tkConfig.sh; then
-                           echo "$tcldir/lib/tkConfig.sh unexpectedly missing"
+                       if $search_tk && test ! -f $tcldir/$lib/tkConfig.sh; then
+                           echo "$tcldir/$lib/tkConfig.sh unexpectedly missing"
                            break
                        fi
                        rm -f conftest.results
@@ -889,9 +913,9 @@ dnl  and Fink on OSX
                        # Send output to conftest.results, and return
                        # 0 if all is ok
                        (
-    . $tcldir/lib/tclConfig.sh
+    . $tcldir/$lib/tclConfig.sh
     if $search_tk; then
-        . $tcldir/lib/tkConfig.sh
+        . $tcldir/$lib/tkConfig.sh
     fi
     tclversint=`[echo $TCL_VERSION$TCL_PATCH_LEVEL-0-0 | sed 's/\([0-9]*\)[^0-9]*\([0-9]*\)[^0-9]*\([0-9]*\).*/10000 \1* 100 \2*+ \3+p/'|dc]`
     if test $tclversint -gt $reqversint; then
@@ -1047,10 +1071,10 @@ AC_DEFUN([STAR_LATEX_DOCUMENTATION],
         if $_star_build_docs; then
             AC_FOREACH([DocCode], [$1],
                [m4_if(m4_bregexp(DocCode,[/]), -1,
-                      [STAR@&t@_LATEX_DOCUMENTATION="$STAR@&t@_LATEX_DOCUMENTATION DocCode.tex DocCode.ps DocCode.htx_tar"
+                      [STAR@&t@_LATEX_DOCUMENTATION="$STAR@&t@_LATEX_DOCUMENTATION DocCode.tex DocCode.pdf DocCode.htx_tar"
 ],
                       [m4_define([_T], m4_bpatsubst(DocCode,[/]))dnl
-                       STAR_LATEX_DOCUMENTATION_[]_STAR_UPCASE(_T)="_T.tex _T.ps _T.htx_tar"
+                       STAR_LATEX_DOCUMENTATION_[]_STAR_UPCASE(_T)="_T.tex _T.pdf _T.htx_tar"
                        AC_SUBST(STAR_LATEX_DOCUMENTATION_[]_STAR_UPCASE(_T))])])
         fi
         STAR_DECLARE_DEPENDENCIES([sourceset], [star2html])

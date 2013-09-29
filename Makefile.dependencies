@@ -113,7 +113,6 @@ $(MANIFESTS)/ast: \
 	  && $(MAKE_CPT)
 
 $(MANIFESTS)/astrom: \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/sla \
 		$(MANIFESTS)/star2html \
@@ -149,7 +148,6 @@ $(MANIFESTS)/atools: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ctg \
@@ -177,7 +175,6 @@ $(MANIFESTS)/atools: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -191,8 +188,6 @@ $(MANIFESTS)/atools: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/atools \
 	  && $(MAKE_CPT)
@@ -236,12 +231,6 @@ $(MANIFESTS)/automake: \
 	  && $(MAKE_CPT)
 
 # Component blt is a configure dependency, so is configurable in place.
-$(MANIFESTS)/blt: \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
-	cd thirdparty/tclsys/blt \
-	  && $(CONFIG_CPT) \
-	  && $(MAKE_CPT)
 
 $(MANIFESTS)/cat: \
 		$(MANIFESTS)/ast \
@@ -271,7 +260,6 @@ $(MANIFESTS)/ccdpack: \
 		$(MANIFESTS)/ard \
 		$(MANIFESTS)/ary \
 		$(MANIFESTS)/ast \
-		$(MANIFESTS)/blt \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -287,7 +275,6 @@ $(MANIFESTS)/ccdpack: \
 		$(MANIFESTS)/idi \
 		$(MANIFESTS)/ifd \
 		$(MANIFESTS)/img \
-		$(MANIFESTS)/itcl \
 		$(MANIFESTS)/mers \
 		$(MANIFESTS)/messgen \
 		$(MANIFESTS)/ndf \
@@ -297,7 +284,6 @@ $(MANIFESTS)/ccdpack: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -310,15 +296,8 @@ $(MANIFESTS)/ccdpack: \
 		$(MANIFESTS)/startcl \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/ccdpack \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/cfitsio: \
-		$(MANIFESTS)/star2html
-	cd thirdparty/heasarc/cfitsio \
 	  && $(MAKE_CPT)
 
 # Component cgs3dr is OBSOLETE -- do not build
@@ -400,7 +379,6 @@ $(MANIFESTS)/convert: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -426,7 +404,6 @@ $(MANIFESTS)/convert: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -439,8 +416,6 @@ $(MANIFESTS)/convert: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/convert \
 	  && $(MAKE_CPT)
@@ -476,7 +451,6 @@ $(MANIFESTS)/cupid: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ctg \
@@ -505,7 +479,6 @@ $(MANIFESTS)/cupid: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -519,9 +492,7 @@ $(MANIFESTS)/cupid: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
 		$(MANIFESTS)/thr \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/cupid \
 	  && $(MAKE_CPT)
@@ -532,7 +503,6 @@ $(MANIFESTS)/cursa: \
 		$(MANIFESTS)/ary \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -550,7 +520,6 @@ $(MANIFESTS)/cursa: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/sae \
@@ -560,9 +529,7 @@ $(MANIFESTS)/cursa: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/startcl \
 		$(MANIFESTS)/starutil \
-		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
+		$(MANIFESTS)/starx
 	cd applications/cursa \
 	  && $(MAKE_CPT)
 
@@ -584,7 +551,6 @@ $(MANIFESTS)/daophot: \
 		$(MANIFESTS)/ndf \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -594,8 +560,6 @@ $(MANIFESTS)/daophot: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/daophot \
 	  && $(MAKE_CPT)
@@ -626,7 +590,6 @@ $(MANIFESTS)/dipso: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ctg \
@@ -652,7 +615,6 @@ $(MANIFESTS)/dipso: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -664,8 +626,6 @@ $(MANIFESTS)/dipso: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/dipso \
 	  && $(MAKE_CPT)
@@ -686,7 +646,6 @@ $(MANIFESTS)/echomop: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ctg \
@@ -714,7 +673,6 @@ $(MANIFESTS)/echomop: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -727,8 +685,6 @@ $(MANIFESTS)/echomop: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/echomop \
 	  && $(MAKE_CPT)
@@ -739,15 +695,12 @@ $(MANIFESTS)/echwind: \
 		$(MANIFESTS)/ems \
 		$(MANIFESTS)/gwm \
 		$(MANIFESTS)/mers \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/sae \
 		$(MANIFESTS)/star2html \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
-		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
+		$(MANIFESTS)/starx
 	cd applications/echwind \
 	  && $(MAKE_CPT)
 
@@ -772,7 +725,6 @@ $(MANIFESTS)/esp: \
 		$(MANIFESTS)/ary \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -792,7 +744,6 @@ $(MANIFESTS)/esp: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -804,8 +755,6 @@ $(MANIFESTS)/esp: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/esp \
 	  && $(MAKE_CPT)
@@ -840,10 +789,6 @@ $(MANIFESTS)/extreme: \
 	cd applications/extreme \
 	  && $(MAKE_CPT)
 
-$(MANIFESTS)/fftw:
-	cd thirdparty/mit/fftw \
-	  && $(MAKE_CPT)
-
 $(MANIFESTS)/figaro: \
 		$(MANIFESTS)/agi \
 		$(MANIFESTS)/ary \
@@ -867,7 +812,6 @@ $(MANIFESTS)/figaro: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -879,8 +823,6 @@ $(MANIFESTS)/figaro: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/figaro \
 	  && $(MAKE_CPT)
@@ -889,7 +831,6 @@ $(MANIFESTS)/findcoords: \
 		$(MANIFESTS)/ary \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/cursa \
@@ -908,7 +849,6 @@ $(MANIFESTS)/findcoords: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/sae \
@@ -918,9 +858,7 @@ $(MANIFESTS)/findcoords: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/startcl \
 		$(MANIFESTS)/starutil \
-		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
+		$(MANIFESTS)/starx
 	cd applications/findcoords \
 	  && $(MAKE_CPT)
 
@@ -970,9 +908,7 @@ $(MANIFESTS)/gaia: \
 		$(MANIFESTS)/ary \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
-		$(MANIFESTS)/blt \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -982,7 +918,6 @@ $(MANIFESTS)/gaia: \
 		$(MANIFESTS)/hds \
 		$(MANIFESTS)/hlp \
 		$(MANIFESTS)/img \
-		$(MANIFESTS)/itcl \
 		$(MANIFESTS)/mers \
 		$(MANIFESTS)/ndf \
 		$(MANIFESTS)/one \
@@ -992,19 +927,11 @@ $(MANIFESTS)/gaia: \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/sae \
-		$(MANIFESTS)/skycat \
 		$(MANIFESTS)/sla \
 		$(MANIFESTS)/star2html \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/startcl \
-		$(MANIFESTS)/starutil \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tcllibs \
-		$(MANIFESTS)/tclx \
-		$(MANIFESTS)/tdom \
-		$(MANIFESTS)/tk \
-		$(MANIFESTS)/vtk \
-		$(MANIFESTS)/xerces-c
+		$(MANIFESTS)/starutil
 	cd applications/gaia \
 	  && $(MAKE_CPT)
 
@@ -1092,10 +1019,6 @@ $(MANIFESTS)/gsd: \
 	cd libraries/gsd \
 	  && $(MAKE_CPT)
 
-$(MANIFESTS)/gsl:
-	cd thirdparty/fsf/gsl \
-	  && $(MAKE_CPT)
-
 $(MANIFESTS)/gwm: \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -1138,8 +1061,7 @@ $(MANIFESTS)/hdstools: \
 		$(MANIFESTS)/sst \
 		$(MANIFESTS)/star2html \
 		$(MANIFESTS)/starmem \
-		$(MANIFESTS)/starutil \
-		$(MANIFESTS)/tcl
+		$(MANIFESTS)/starutil
 	cd applications/hdstools \
 	  && $(MAKE_CPT)
 
@@ -1219,8 +1141,7 @@ $(MANIFESTS)/idi: \
 # Component ifd has configure dependencies on { tcl },
 # which must be built before this component is configured.
 $(MANIFESTS)/ifd: \
-		$(MANIFESTS)/star2html \
-		$(MANIFESTS)/tcl
+		$(MANIFESTS)/star2html
 	cd applications/ifd \
 	  && $(MAKE_CPT)
 
@@ -1285,7 +1206,6 @@ $(MANIFESTS)/iras90: \
 		$(MANIFESTS)/par \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1298,8 +1218,6 @@ $(MANIFESTS)/iras90: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/obsolete/iras90 \
 	  && $(MAKE_CPT)
@@ -1377,14 +1295,6 @@ $(MANIFESTS)/irq: \
 	cd libraries/irq \
 	  && $(MAKE_CPT)
 
-# Component itcl is a configure dependency, so is configurable in place.
-$(MANIFESTS)/itcl: \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
-	cd thirdparty/tclsys/itcl \
-	  && $(CONFIG_CPT) \
-	  && $(MAKE_CPT)
-
 $(MANIFESTS)/jcmtdr: \
 		$(MANIFESTS)/agi \
 		$(MANIFESTS)/ary \
@@ -1417,7 +1327,6 @@ $(MANIFESTS)/jcmtdr: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1430,17 +1339,11 @@ $(MANIFESTS)/jcmtdr: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/jcmtdr \
 	  && $(MAKE_CPT)
 
 # Component jpeg is a configure dependency, so is configurable in place.
-$(MANIFESTS)/jpeg:
-	cd thirdparty/ijg/jpeg \
-	  && $(CONFIG_CPT) \
-	  && $(MAKE_CPT)
 
 # Component jpl is OBSOLETE -- do not build
 $(MANIFESTS)/jpl: \
@@ -1496,7 +1399,6 @@ $(MANIFESTS)/kappa: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ctg \
@@ -1525,7 +1427,6 @@ $(MANIFESTS)/kappa: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1539,8 +1440,6 @@ $(MANIFESTS)/kappa: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/kappa \
 	  && $(MAKE_CPT)
@@ -1552,7 +1451,6 @@ $(MANIFESTS)/kaprh: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ctg \
@@ -1580,7 +1478,6 @@ $(MANIFESTS)/kaprh: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1594,15 +1491,10 @@ $(MANIFESTS)/kaprh: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/kaprh \
 	  && $(MAKE_CPT)
 
-$(MANIFESTS)/latex2html:
-	cd thirdparty/latex2html/latex2html \
-	  && $(MAKE_CPT)
 
 # Component libtool is a buildsupport component
 $(MANIFESTS)/libtool:
@@ -1699,10 +1591,6 @@ $(MANIFESTS)/mers: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil
 	cd libraries/mers \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/mesa:
-	cd thirdparty/mesa3d/mesa \
 	  && $(MAKE_CPT)
 
 $(MANIFESTS)/messgen: \
@@ -1818,13 +1706,6 @@ $(MANIFESTS)/one: \
 	cd libraries/one \
 	  && $(MAKE_CPT)
 
-$(MANIFESTS)/pal: \
-		$(MANIFESTS)/sofa \
-		$(MANIFESTS)/star2html \
-		$(MANIFESTS)/starutil
-	cd libext/pal \
-	  && $(MAKE_CPT)
-
 $(MANIFESTS)/pamela: \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
@@ -1889,7 +1770,6 @@ $(MANIFESTS)/pda: \
 	  && $(MAKE_CPT)
 
 $(MANIFESTS)/period: \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -1912,12 +1792,6 @@ $(MANIFESTS)/period: \
 	cd applications/period \
 	  && $(MAKE_CPT)
 
-# Component perl is a configure dependency, so is configurable in place.
-$(MANIFESTS)/perl:
-	cd thirdparty/perlsys/perl \
-	  && $(CONFIG_CPT) \
-	  && $(MAKE_CPT)
-
 $(MANIFESTS)/pgp: \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -1928,21 +1802,6 @@ $(MANIFESTS)/pgp: \
 		$(MANIFESTS)/star2html \
 		$(MANIFESTS)/starmem
 	cd libraries/pgp \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/pgplot: \
-		$(MANIFESTS)/chr \
-		$(MANIFESTS)/cnf \
-		$(MANIFESTS)/ems \
-		$(MANIFESTS)/gwm \
-		$(MANIFESTS)/mers \
-		$(MANIFESTS)/psx \
-		$(MANIFESTS)/sae \
-		$(MANIFESTS)/starmem \
-		$(MANIFESTS)/starutil \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
-	cd thirdparty/caltech/pgplot \
 	  && $(MAKE_CPT)
 
 $(MANIFESTS)/photom: \
@@ -1968,7 +1827,6 @@ $(MANIFESTS)/photom: \
 		$(MANIFESTS)/par \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1979,8 +1837,6 @@ $(MANIFESTS)/photom: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/photom \
 	  && $(MAKE_CPT)
@@ -1990,7 +1846,6 @@ $(MANIFESTS)/pisa: \
 		$(MANIFESTS)/ary \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
@@ -2009,7 +1864,6 @@ $(MANIFESTS)/pisa: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -2021,8 +1875,6 @@ $(MANIFESTS)/pisa: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/pisa \
 	  && $(MAKE_CPT)
@@ -2033,7 +1885,6 @@ $(MANIFESTS)/polpack: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/atl \
 		$(MANIFESTS)/cat \
-		$(MANIFESTS)/cfitsio \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ctg \
@@ -2050,7 +1901,6 @@ $(MANIFESTS)/polpack: \
 		$(MANIFESTS)/idi \
 		$(MANIFESTS)/ifd \
 		$(MANIFESTS)/irq \
-		$(MANIFESTS)/jpeg \
 		$(MANIFESTS)/kaplibs \
 		$(MANIFESTS)/lpg \
 		$(MANIFESTS)/mers \
@@ -2063,7 +1913,6 @@ $(MANIFESTS)/polpack: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -2077,8 +1926,6 @@ $(MANIFESTS)/polpack: \
 		$(MANIFESTS)/startcl \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/polpack \
 	  && $(MAKE_CPT)
@@ -2101,7 +1948,6 @@ $(MANIFESTS)/pongo: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -2112,8 +1958,6 @@ $(MANIFESTS)/pongo: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/pongo \
 	  && $(MAKE_CPT)
@@ -2409,17 +2253,6 @@ $(MANIFESTS)/shl: \
 	cd libraries/shl \
 	  && $(MAKE_CPT)
 
-$(MANIFESTS)/skycat: \
-		$(MANIFESTS)/blt \
-		$(MANIFESTS)/cfitsio \
-		$(MANIFESTS)/itcl \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tclx \
-		$(MANIFESTS)/tk \
-		$(MANIFESTS)/tkimg
-	cd thirdparty/eso/skycat \
-	  && $(MAKE_CPT)
-
 $(MANIFESTS)/sla: \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/star2html \
@@ -2437,14 +2270,12 @@ $(MANIFESTS)/smurf: \
 		$(MANIFESTS)/chr \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
-		$(MANIFESTS)/fftw \
 		$(MANIFESTS)/fio \
 		$(MANIFESTS)/generic \
 		$(MANIFESTS)/gks \
 		$(MANIFESTS)/gns \
 		$(MANIFESTS)/grp \
 		$(MANIFESTS)/gsd \
-		$(MANIFESTS)/gsl \
 		$(MANIFESTS)/gwm \
 		$(MANIFESTS)/hds \
 		$(MANIFESTS)/hlp \
@@ -2458,7 +2289,6 @@ $(MANIFESTS)/smurf: \
 		$(MANIFESTS)/ndf \
 		$(MANIFESTS)/ndg \
 		$(MANIFESTS)/one \
-		$(MANIFESTS)/pal \
 		$(MANIFESTS)/par \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
@@ -2468,7 +2298,6 @@ $(MANIFESTS)/smurf: \
 		$(MANIFESTS)/sgs \
 		$(MANIFESTS)/shl \
 		$(MANIFESTS)/snx \
-		$(MANIFESTS)/sofa \
 		$(MANIFESTS)/sst \
 		$(MANIFESTS)/star2html \
 		$(MANIFESTS)/starmem \
@@ -2492,10 +2321,6 @@ $(MANIFESTS)/snx: \
 		$(MANIFESTS)/star2html \
 		$(MANIFESTS)/starmem
 	cd libraries/snx \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/sofa:
-	cd thirdparty/sofa/sofa \
 	  && $(MAKE_CPT)
 
 $(MANIFESTS)/specx: \
@@ -2524,7 +2349,6 @@ $(MANIFESTS)/specx: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
-		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -2536,8 +2360,6 @@ $(MANIFESTS)/specx: \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
 		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk \
 		$(MANIFESTS)/trn
 	cd applications/specx \
 	  && $(MAKE_CPT)
@@ -2675,8 +2497,7 @@ $(MANIFESTS)/sst: \
 
 # Component star2html has configure dependencies on { perl },
 # which must be built before this component is configured.
-$(MANIFESTS)/star2html: \
-		$(MANIFESTS)/latex2html
+$(MANIFESTS)/star2html: 
 	cd applications/star2html \
 	  && $(MAKE_CPT)
 
@@ -2759,7 +2580,6 @@ $(MANIFESTS)/startcl: \
 		$(MANIFESTS)/gwm \
 		$(MANIFESTS)/hds \
 		$(MANIFESTS)/hlp \
-		$(MANIFESTS)/jpeg \
 		$(MANIFESTS)/mers \
 		$(MANIFESTS)/nbs \
 		$(MANIFESTS)/pcs \
@@ -2768,9 +2588,7 @@ $(MANIFESTS)/startcl: \
 		$(MANIFESTS)/star2html \
 		$(MANIFESTS)/starmem \
 		$(MANIFESTS)/starutil \
-		$(MANIFESTS)/starx \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
+		$(MANIFESTS)/starx
 	cd applications/startcl \
 	  && $(MAKE_CPT)
 
@@ -2971,7 +2789,6 @@ $(MANIFESTS)/surf: \
 		$(MANIFESTS)/cnf \
 		$(MANIFESTS)/ems \
 		$(MANIFESTS)/generic \
-		$(MANIFESTS)/gsl \
 		$(MANIFESTS)/hds \
 		$(MANIFESTS)/hlp \
 		$(MANIFESTS)/mers \
@@ -2986,28 +2803,6 @@ $(MANIFESTS)/surf: \
 	cd applications/surf \
 	  && $(MAKE_CPT)
 
-# Component tcl is a configure dependency, so is configurable in place.
-$(MANIFESTS)/tcl:
-	cd thirdparty/tclsys/tcl \
-	  && $(CONFIG_CPT) \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/tcllibs: \
-		$(MANIFESTS)/tcl
-	cd thirdparty/tclsys/tcllibs \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/tclx: \
-		$(MANIFESTS)/tcl
-	cd thirdparty/tclsys/tclx \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/tdom: \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
-	cd thirdparty/tclsys/tdom \
-	  && $(MAKE_CPT)
-
 $(MANIFESTS)/thr: \
 		$(MANIFESTS)/ast \
 		$(MANIFESTS)/cnf \
@@ -3016,19 +2811,6 @@ $(MANIFESTS)/thr: \
 		$(MANIFESTS)/star2html \
 		$(MANIFESTS)/starmem
 	cd libraries/thr \
-	  && $(MAKE_CPT)
-
-# Component tk is a configure dependency, so is configurable in place.
-$(MANIFESTS)/tk: \
-		$(MANIFESTS)/tcl
-	cd thirdparty/tclsys/tk \
-	  && $(CONFIG_CPT) \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/tkimg: \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
-	cd thirdparty/tclsys/tkimg \
 	  && $(MAKE_CPT)
 
 $(MANIFESTS)/trn: \
@@ -3078,20 +2860,9 @@ $(MANIFESTS)/tsp: \
 	cd applications/tsp \
 	  && $(MAKE_CPT)
 
-$(MANIFESTS)/vtk: \
-		$(MANIFESTS)/mesa \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk
-	cd thirdparty/kitware/vtk \
-	  && $(MAKE_CPT)
-
 $(MANIFESTS)/xdisplay: \
 		$(MANIFESTS)/star2html
 	cd applications/xdisplay \
-	  && $(MAKE_CPT)
-
-$(MANIFESTS)/xerces-c:
-	cd thirdparty/apache/xerces-c \
 	  && $(MAKE_CPT)
 
 # List of all supported components
@@ -3145,13 +2916,11 @@ SUPPORTED_COMPONENTS = \
 	$(MANIFESTS)/ndf \
 	$(MANIFESTS)/ndg \
 	$(MANIFESTS)/news \
-	$(MANIFESTS)/pal \
 	$(MANIFESTS)/pamela \
 	$(MANIFESTS)/par \
 	$(MANIFESTS)/pcs \
 	$(MANIFESTS)/pda \
 	$(MANIFESTS)/pgp \
-	$(MANIFESTS)/pgplot \
 	$(MANIFESTS)/photom \
 	$(MANIFESTS)/polpack \
 	$(MANIFESTS)/prm \
@@ -3283,13 +3052,3 @@ buildsupport: $(BUILDSUPPORT_MANIFESTS)
 # including any conditionally built ones
 clean-buildsupport:
 	rm -f $(BUILDSUPPORT_MANIFESTS) $(EXTRA_BUILDSUPPORT_MANIFESTS)
-
-# Configuration dependencies
-# Run 'make configure-deps' to make these components before ./configure
-configure-deps: \
-		$(MANIFESTS)/blt \
-		$(MANIFESTS)/itcl \
-		$(MANIFESTS)/jpeg \
-		$(MANIFESTS)/perl \
-		$(MANIFESTS)/tcl \
-		$(MANIFESTS)/tk

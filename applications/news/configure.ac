@@ -23,7 +23,6 @@ STAR_CHECK_PROGS(sh)
 STAR_CHECK_PROGS(echo)
 
 dnl    Depends on the Starlink Perl.
-STAR_DECLARE_DEPENDENCIES([configure], [perl])
 STAR_CHECK_PROGS(env)
 
 dnl    Documentation is in the parent directory

@@ -30,8 +30,7 @@ dnl    Just check we have the JPEG headers for sanity. This is a build
 dnl    dependency, so should be guaranteed.
 AC_CHECK_HEADERS([jpeglib.h])
 
-STAR_DECLARE_DEPENDENCIES(build, [ems gwm jpeg mers nbs pcs sae starx tcl tk])
-STAR_DECLARE_DEPENDENCIES(configure, [jpeg tcl tk])
+STAR_DECLARE_DEPENDENCIES(build, [ems gwm mers nbs pcs sae starx])
 
 STAR_LATEX_DOCUMENTATION([sun186 sun219])
 

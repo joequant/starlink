@@ -236,6 +236,8 @@
 #include <float.h>
 #include <tcl.h>
 #include <tk.h>
+#define USE_BLT_STUBS
+#define USE_BLT_STUB_PROCS
 #include <blt.h>
 #include <bltVector.h>
 #include <netinet/in.h>

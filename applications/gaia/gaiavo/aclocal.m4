@@ -3,9 +3,11 @@ builtin(include,tclconfig/tcl.m4)
 builtin(include,tclconfig/starconf.m4)
 
 AC_DEFUN(GAIAVO_CONFIG, [
-
 # Load the Tclutil definitions
-cf=${prefix}/lib/tclutilConfig.sh
+util_found=0
+for d in  ${prefix}/lib ${prefix}/lib64 /usr/lib /usr/lib64
+do
+cf=${d}/tclutilConfig.sh
 if test -f $cf ; then
     . $cf
     AC_SUBST(tclutil_VERSION)
@@ -19,12 +21,11 @@ if test -f $cf ; then
     AC_SUBST(tclutil_PKG_OBJECTS)
     AC_SUBST(CFITSIO_LIB_SPEC)
     AC_SUBST(CFITSIO_LIB_DIR)
-else
-    AC_MSG_ERROR([$cf doesn't exist])
+    util_found=1
 fi
 
 # Load the Astrotcl definitions
-cf=${prefix}/lib/astrotclConfig.sh
+cf=${d}/astrotclConfig.sh
 if test -f $cf ; then
     . $cf
     AC_SUBST(astrotcl_VERSION)
@@ -34,12 +35,23 @@ if test -f $cf ; then
     AC_SUBST(astrotcl_LIB_SPEC)
     AC_SUBST(astrotcl_SRC_DIR)
     AC_SUBST(astrotcl_PKG_OBJECTS)
-else
-    AC_MSG_ERROR([$cf doesn't exist])
+fi
+
+# Load the Rtd definitions
+cf=${d}/rtdConfig.sh
+if test -f $cf ; then
+    . $cf
+    AC_SUBST(rtd_VERSION)
+    AC_SUBST(rtd_LIB_FILE)
+    AC_SUBST(rtd_BUILD_LIB_SPEC)
+    AC_SUBST(rtd_BUILD_DIR)
+    AC_SUBST(rtd_LIB_SPEC)
+    AC_SUBST(rtd_SRC_DIR)
+    AC_SUBST(rtd_PKG_OBJECTS)
 fi
 
 # Load the Cat definitions
-cf=${prefix}/lib/catConfig.sh
+cf=${d}/catConfig.sh
 if test -f $cf ; then
     . $cf
     AC_SUBST(cat_VERSION)
@@ -49,7 +61,22 @@ if test -f $cf ; then
     AC_SUBST(cat_LIB_SPEC)
     AC_SUBST(cat_SRC_DIR)
     AC_SUBST(rtd_PKG_OBJECTS)
-else
+fi
+
+# Load the SkyCat definitions
+cf=${d}/skycatConfig.sh
+if test -f $cf ; then
+    . $cf
+    AC_SUBST(skycat_VERSION)
+    AC_SUBST(skycat_LIB_FILE)
+    AC_SUBST(skycat_BUILD_LIB_SPEC)
+    AC_SUBST(skycat_BUILD_DIR)
+    AC_SUBST(skycat_LIB_SPEC)
+    AC_SUBST(skycat_SRC_DIR)
+fi
+done
+
+if test "$util_found" = "0" ; then
     AC_MSG_ERROR([$cf doesn't exist])
 fi
 
@@ -58,7 +85,7 @@ csources=`cd ${srcdir}; echo generic/*.[Cc]`
 changequote([, ])
 
 gaia_headers=`cd ${srcdir}; echo generic/*.h generic/*.icc generic/*.hxx`
-gaia_includes="-I. -I${srcdir}/generic -I${prefix}/include/cat -I${prefix}/include/astrotcl -I${prefix}/include/tclutil"
+gaia_includes="-I. -I${srcdir}/generic -I${prefix}/include -I${prefix}/include/cat -I${prefix}/include/astrotcl -I${prefix}/include/tclutil -I/usr/include/cat -I/usr/include/astrotcl -I/usr/include/tclutil"
 tclsources=`cd ${srcdir}; echo library/*.tcl library/*.wsdl library/*.xsl library/*.vot`
 
 ]) 

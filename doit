@@ -1,0 +1,26 @@
+export STARCONF_DEFAULT_PREFIX=/home/joe/local-star
+export STARCONF_DEFAULT_STARLINK=/home/joe/local-star
+export PATH=/home/joe/local-star/bin:/tmp/buildsupport/bin:$PATH
+export LD_LIBRARY_PATH=/home/joe/local-star/lib:$LD_LIBRARY_PATH
+mkdir -p $STARCONF_DEFAULT_PREFIX/bin
+
+cat <<EOP > $STARCONF_DEFAULT_PREFIX/bin/cfitsio_link
+pkg-config --libs cfitsio
+EOP
+chmod a+x $STARCONF_DEFAULT_PREFIX/bin/cfitsio_link
+
+cat <<EOP > $STARCONF_DEFAULT_PREFIX/bin/pgplot_link
+echo "-lPG2PLplot"
+EOP
+chmod a+x $STARCONF_DEFAULT_PREFIX/bin/pgplot_link
+
+cat <<EOP > $STARCONF_DEFAULT_PREFIX/bin/pgplot_link_adam
+echo "-lPG2PLplot"
+EOP
+chmod a+x $STARCONF_DEFAULT_PREFIX/bin/pgplot_link_adam
+
+#./bootstrap --buildsupport-prefix=/tmp/buildsupport
+#./configure --disable-static -C
+make -k STAR_LDFLAGS="-L/usr/lib64" world
+
+

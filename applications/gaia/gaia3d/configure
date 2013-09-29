@@ -1497,6 +1497,7 @@ echo "$as_me: error: ${with_tclconfig} directory doesn't contain tclConfig.sh" >
 			`ls -d /usr/local/lib 2>/dev/null` \
 			`ls -d /usr/contrib/lib 2>/dev/null` \
 			`ls -d /usr/lib 2>/dev/null` \
+			`ls -d /usr/lib64 2>/dev/null` \
 			; do
 		    if test -f "$i/tclConfig.sh" ; then
 			ac_cv_c_tclconfig=`(cd $i; pwd)`
@@ -1686,6 +1687,7 @@ echo "$as_me: error: ${with_tkconfig} directory doesn't contain tkConfig.sh" >&2
 			`ls -d /usr/local/lib 2>/dev/null` \
 			`ls -d /usr/contrib/lib 2>/dev/null` \
 			`ls -d /usr/lib 2>/dev/null` \
+			`ls -d /usr/lib64 2>/dev/null` \
 			; do
 		    if test -f "$i/tkConfig.sh" ; then
 			ac_cv_c_tkconfig=`(cd $i; pwd)`
@@ -6668,9 +6670,11 @@ done
 # Do application specific checks (see aclocal.m4)
 #--------------------------------------------------------------------
 
-
 # Load the Tclutil definitions
-cf=${prefix}/lib/tclutilConfig.sh
+util_found=0
+for d in  ${prefix}/lib ${prefix}/lib64 /usr/lib /usr/lib64
+do
+cf=${d}/tclutilConfig.sh
 if test -f $cf ; then
     . $cf
 
@@ -6684,14 +6688,11 @@ if test -f $cf ; then
 
 
 
-else
-    { { echo "$as_me:$LINENO: error: $cf doesn't exist" >&5
-echo "$as_me: error: $cf doesn't exist" >&2;}
-   { (exit 1); exit 1; }; }
+    util_found=1
 fi
 
 # Load the Astrotcl definitions
-cf=${prefix}/lib/astrotclConfig.sh
+cf=${d}/astrotclConfig.sh
 if test -f $cf ; then
     . $cf
 
@@ -6701,14 +6702,10 @@ if test -f $cf ; then
 
 
 
-else
-    { { echo "$as_me:$LINENO: error: $cf doesn't exist" >&5
-echo "$as_me: error: $cf doesn't exist" >&2;}
-   { (exit 1); exit 1; }; }
 fi
 
 # Load the Rtd definitions
-cf=${prefix}/lib/rtdConfig.sh
+cf=${d}/rtdConfig.sh
 if test -f $cf ; then
     . $cf
 
@@ -6718,14 +6715,10 @@ if test -f $cf ; then
 
 
 
-else
-    { { echo "$as_me:$LINENO: error: $cf doesn't exist" >&5
-echo "$as_me: error: $cf doesn't exist" >&2;}
-   { (exit 1); exit 1; }; }
 fi
 
 # Load the Cat definitions
-cf=${prefix}/lib/catConfig.sh
+cf=${d}/catConfig.sh
 if test -f $cf ; then
     . $cf
 
@@ -6735,14 +6728,10 @@ if test -f $cf ; then
 
 
 
-else
-    { { echo "$as_me:$LINENO: error: $cf doesn't exist" >&5
-echo "$as_me: error: $cf doesn't exist" >&2;}
-   { (exit 1); exit 1; }; }
 fi
 
 # Load the SkyCat definitions
-cf=${prefix}/lib/skycatConfig.sh
+cf=${d}/skycatConfig.sh
 if test -f $cf ; then
     . $cf
 
@@ -6751,7 +6740,10 @@ if test -f $cf ; then
 
 
 
-else
+fi
+done
+
+if test "$util_found" = "0" ; then
     { { echo "$as_me:$LINENO: error: $cf doesn't exist" >&5
 echo "$as_me: error: $cf doesn't exist" >&2;}
    { (exit 1); exit 1; }; }
@@ -6762,9 +6754,11 @@ sources=`cd ${srcdir}; echo generic/*.[Cc]`
 
 
 headers=`cd ${srcdir}; echo generic/*.h`
-includes="-I. -I${srcdir}/generic -I../gaia/generic -I${prefix}/include/skycat \
+includes="-I. -I${srcdir}/generic -I../gaia/generic -I${prefix}/include -I${prefix}/include/skycat \
 -I${prefix}/include/rtd -I${prefix}/include/cat -I${prefix}/include/astrotcl \
--I${prefix}/include/tclutil -I${prefix}/include/vtk"
+-I${prefix}/include/tclutil -I${prefix}/include/vtk -I/usr/include/skycat \
+-I/usr/include/rtd -I/usr/include/cat -I/usr/include/astrotcl \
+-I/usr/include/tclutil -I/usr/include/vtk"
 tclsources=`cd ${srcdir}; echo library/*.tcl`
 
 #  Size of long so we can distinguish 32 and 64 bit integer types. We assume
@@ -8309,7 +8303,7 @@ echo "${ECHO_T}could not find any!" >&6
 	echo "$as_me:$LINENO: checking for X11 libraries" >&5
 echo $ECHO_N "checking for X11 libraries... $ECHO_C" >&6
 	XLIBSW=nope
-	dirs="/usr/unsupported/lib /usr/local/lib /usr/X386/lib /usr/X11R6/lib /usr/X11R5/lib /usr/lib/X11R5 /usr/lib/X11R4 /usr/openwin/lib /usr/X11/lib /usr/sww/X11/lib"
+	dirs="/usr/unsupported/lib /usr/local/lib /usr/X386/lib /usr/X11R6/lib /usr/X11R5/lib /usr/lib/X11R5 /usr/lib/X11R4 /usr/openwin/lib /usr/X11/lib /usr/sww/X11/lib /usr/lib64"
 	for i in $dirs ; do
 	    if test -r $i/libX11.a -o -r $i/libX11.so -o -r $i/libX11.sl -o -r $i/libX11.dylib -o -r $i/libX11.la -o -r $i/libX11.dll; then
 		echo "$as_me:$LINENO: result: $i" >&5
