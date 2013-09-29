@@ -1,27 +1,27 @@
 [submodule "thirdparty/rit/match/match"]
 	path = thirdparty/rit/match/match
-	url = ../match.git
+	url = https://github.com/Starlink/match.git
 [submodule "thirdparty/kitware/vtk/VTK"]
 	path = thirdparty/kitware/vtk/VTK
-	url = ../vtk.git
+	url = https://github.com/Starlink/vtk.git
 [submodule "thirdparty/kitware/vtk/cmake"]
 	path = thirdparty/kitware/vtk/cmake
-	url = ../cmake.git
+	url = https://github.com/Starlink/cmake.git
 [submodule "thirdparty/fsf/autoconf"]
 	path = thirdparty/fsf/autoconf
-	url = ../autoconf.git
+	url = https://github.com/Starlink/autoconf.git
 [submodule "thirdparty/norman/dvi2bitmap/dvi2bitmap"]
 	path = thirdparty/norman/dvi2bitmap/dvi2bitmap
-	url = ../dvi2bitmap.git
+	url = https://github.com/Starlink/dvi2bitmap.git
 [submodule "thirdparty/fsf/automake"]
 	path = thirdparty/fsf/automake
-	url = ../automake.git
+	url = https://github.com/Starlink/automake.git
 [submodule "thirdparty/eso/skycat/skycat"]
 	path = thirdparty/eso/skycat/skycat
-	url = ../skycat.git
+	url = https://github.com/Starlink/skycat.git
 [submodule "thirdparty/fsf/libtool"]
 	path = thirdparty/fsf/libtool
-	url = ../libtool.git
+	url = https://github.com/Starlink/libtool.git
 [submodule "thirdparty/perlsys/perl/perl"]
 	path = thirdparty/perlsys/perl/perl
 	url = git://github.com/mirrors/perl.git
@@ -30,103 +30,103 @@
 	url = git://github.com/jac-h/acsis-libspecwrite.git
 [submodule "thirdparty/heasarc/cfitsio/cfitsio"]
 	path = thirdparty/heasarc/cfitsio/cfitsio
-	url = ../cfitsio.git
+	url = https://github.com/Starlink/cfitsio.git
 [submodule "thirdparty/mit/fftw/fftw"]
 	path = thirdparty/mit/fftw/fftw
-	url = ../fftw.git
+	url = https://github.com/Starlink/fftw.git
 [submodule "thirdparty/ijg/jpeg/jpeg"]
 	path = thirdparty/ijg/jpeg/jpeg
-	url = ../jpeg.git
+	url = https://github.com/Starlink/jpeg.git
 [submodule "thirdparty/latex2html/latex2html/latex2html"]
 	path = thirdparty/latex2html/latex2html/latex2html
-	url = ../latex2html.git
+	url = https://github.com/Starlink/latex2html.git
 [submodule "thirdparty/fsf/m4"]
 	path = thirdparty/fsf/m4
-	url = ../m4.git
+	url = https://github.com/Starlink/m4.git
 [submodule "thirdparty/mesa3d/mesa/mesa"]
 	path = thirdparty/mesa3d/mesa/mesa
-	url = ../mesa.git
+	url = https://github.com/Starlink/mesa.git
 [submodule "thirdparty/tclsys/tcl"]
 	path = thirdparty/tclsys/tcl
-	url = ../tcl.git
+	url = https://github.com/Starlink/tcl.git
 [submodule "thirdparty/tclsys/tclx/tclx"]
 	path = thirdparty/tclsys/tclx/tclx
-	url = ../tclx.git
+	url = https://github.com/Starlink/tclx.git
 [submodule "thirdparty/tclsys/tdom/tdom"]
 	path = thirdparty/tclsys/tdom/tdom
-	url = ../tdom.git
+	url = https://github.com/Starlink/tdom.git
 [submodule "thirdparty/tclsys/tk"]
 	path = thirdparty/tclsys/tk
-	url = ../tk.git
+	url = https://github.com/Starlink/tk.git
 [submodule "thirdparty/tclsys/tkimg/tkimg"]
 	path = thirdparty/tclsys/tkimg/tkimg
-	url = ../tkimg.git
+	url = https://github.com/Starlink/tkimg.git
 [submodule "thirdparty/apache/xerces-c/xerces-c"]
 	path = thirdparty/apache/xerces-c/xerces-c
-	url = ../xerces.git
+	url = https://github.com/Starlink/xerces.git
 [submodule "buildsupport/autobuild"]
 	path = buildsupport/autobuild
-	url = ../autobuild.git
+	url = https://github.com/Starlink/autobuild.git
 [submodule "thirdparty/fsf/gsl/gsl"]
 	path = thirdparty/fsf/gsl/gsl
-	url = ../gsl.git
+	url = https://github.com/Starlink/gsl.git
 [submodule "thirdparty/tclsys/itcl/itcl"]
 	path = thirdparty/tclsys/itcl/itcl
-	url = ../itcl.git
+	url = https://github.com/Starlink/itcl.git
 [submodule "thirdparty/tclsys/itcl/itk"]
 	path = thirdparty/tclsys/itcl/itk
-	url = ../itk.git
+	url = https://github.com/Starlink/itk.git
 [submodule "thirdparty/tclsys/itcl/iwidgets"]
 	path = thirdparty/tclsys/itcl/iwidgets
-	url = ../iwidgets.git
+	url = https://github.com/Starlink/iwidgets.git
 [submodule "applications/extractor/sextractor"]
 	path = applications/extractor/sextractor
-	url = ../sextractor.git
+	url = https://github.com/Starlink/sextractor.git
 [submodule "applications/extractor/extract/src"]
 	path = applications/extractor/extract/src
-	url = ../starextract.git
+	url = https://github.com/Starlink/starextract.git
 [submodule "thirdparty/tclsys/blt/wizeblt"]
 	path = thirdparty/tclsys/blt/wizeblt
-	url = ../wizeblt.git
+	url = https://github.com/Starlink/wizeblt.git
 [submodule "thirdparty/sofa/sofa"]
 	path = thirdparty/sofa/sofa
-	url = ../sofa.git
+	url = https://github.com/Starlink/sofa.git
 [submodule "thirdparty/perlsys/perlmods/perl-NDF"]
 	path = thirdparty/perlsys/perlmods/perl-NDF
-	url = ../perl-NDF.git
+	url = https://github.com/Starlink/perl-NDF.git
 [submodule "thirdparty/perlsys/perlmods/perl-GSD"]
 	path = thirdparty/perlsys/perlmods/perl-GSD
-	url = ../perl-GSD.git
+	url = https://github.com/Starlink/perl-GSD.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-AMS"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-AMS
-	url = ../perl-Starlink-AMS.git
+	url = https://github.com/Starlink/perl-Starlink-AMS.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-Config"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-Config
-	url = ../perl-Starlink-Config.git
+	url = https://github.com/Starlink/perl-Starlink-Config.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-Versions"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-Versions
-	url = ../perl-Starlink-Versions.git
+	url = https://github.com/Starlink/perl-Starlink-Versions.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-HDSPACK"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-HDSPACK
-	url = ../perl-Starlink-HDSPACK.git
+	url = https://github.com/Starlink/perl-Starlink-HDSPACK.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-ADAM"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-ADAM
-	url = ../perl-Starlink-ADAM.git
+	url = https://github.com/Starlink/perl-Starlink-ADAM.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-Prologue"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-Prologue
-	url = ../perl-Starlink-Prologue.git
+	url = https://github.com/Starlink/perl-Starlink-Prologue.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-Astrom"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-Astrom
-	url = ../perl-Starlink-Astrom.git
+	url = https://github.com/Starlink/perl-Starlink-Astrom.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-Autoastrom"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-Autoastrom
-	url = ../perl-Starlink-Autoastrom.git
+	url = https://github.com/Starlink/perl-Starlink-Autoastrom.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-EMS"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-EMS
-	url = ../perl-Starlink-EMS.git
+	url = https://github.com/Starlink/perl-Starlink-EMS.git
 [submodule "thirdparty/perlsys/perlmods/perl-Starlink-Extractor"]
 	path = thirdparty/perlsys/perlmods/perl-Starlink-Extractor
-	url = ../perl-Starlink-Extractor.git
+	url = https://github.com/Starlink/perl-Starlink-Extractor.git
 [submodule "thirdparty/perlsys/perlmods/perl-JCMT-Pointing"]
 	path = thirdparty/perlsys/perlmods/perl-JCMT-Pointing
 	url = git://github.com/jac-h/perl-JCMT-Pointing.git
@@ -153,7 +153,7 @@
 	url = git://github.com/jac-h/perl-JCMT-DAS.git
 [submodule "libext/pal"]
 	path = libext/pal
-	url = ../pal
+	url = https://github.com/Starlink/pal
 [submodule "thirdparty/perlsys/perlmods/perl-Astro-ITC-SCUBA2"]
 	path = thirdparty/perlsys/perlmods/perl-Astro-ITC-SCUBA2
 	url = git://github.com/jac-h/perl-Astro-ITC-SCUBA2.git
