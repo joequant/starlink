@@ -175,6 +175,7 @@ $(MANIFESTS)/atools: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -284,6 +285,7 @@ $(MANIFESTS)/ccdpack: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -404,6 +406,7 @@ $(MANIFESTS)/convert: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -479,6 +482,7 @@ $(MANIFESTS)/cupid: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -520,6 +524,7 @@ $(MANIFESTS)/cursa: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/sae \
@@ -551,6 +556,7 @@ $(MANIFESTS)/daophot: \
 		$(MANIFESTS)/ndf \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -615,6 +621,7 @@ $(MANIFESTS)/dipso: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -673,6 +680,7 @@ $(MANIFESTS)/echomop: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -695,6 +703,7 @@ $(MANIFESTS)/echwind: \
 		$(MANIFESTS)/ems \
 		$(MANIFESTS)/gwm \
 		$(MANIFESTS)/mers \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/sae \
 		$(MANIFESTS)/star2html \
@@ -744,6 +753,7 @@ $(MANIFESTS)/esp: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -812,6 +822,7 @@ $(MANIFESTS)/figaro: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -849,6 +860,7 @@ $(MANIFESTS)/findcoords: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/sae \
@@ -1206,6 +1218,7 @@ $(MANIFESTS)/iras90: \
 		$(MANIFESTS)/par \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1327,6 +1340,7 @@ $(MANIFESTS)/jcmtdr: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1427,6 +1441,7 @@ $(MANIFESTS)/kappa: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1478,6 +1493,7 @@ $(MANIFESTS)/kaprh: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1804,6 +1820,19 @@ $(MANIFESTS)/pgp: \
 	cd libraries/pgp \
 	  && $(MAKE_CPT)
 
+$(MANIFESTS)/pgplot: \
+		$(MANIFESTS)/chr \
+		$(MANIFESTS)/cnf \
+		$(MANIFESTS)/ems \
+		$(MANIFESTS)/gwm \
+		$(MANIFESTS)/mers \
+		$(MANIFESTS)/psx \
+		$(MANIFESTS)/sae \
+		$(MANIFESTS)/starmem \
+		$(MANIFESTS)/starutil
+	cd thirdparty/caltech/pgplot \
+	  && $(MAKE_CPT)
+
 $(MANIFESTS)/photom: \
 		$(MANIFESTS)/agi \
 		$(MANIFESTS)/ard \
@@ -1827,6 +1856,7 @@ $(MANIFESTS)/photom: \
 		$(MANIFESTS)/par \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1864,6 +1894,7 @@ $(MANIFESTS)/pisa: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1913,6 +1944,7 @@ $(MANIFESTS)/polpack: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -1948,6 +1980,7 @@ $(MANIFESTS)/pongo: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -2349,6 +2382,7 @@ $(MANIFESTS)/specx: \
 		$(MANIFESTS)/pcs \
 		$(MANIFESTS)/pda \
 		$(MANIFESTS)/pgp \
+		$(MANIFESTS)/pgplot \
 		$(MANIFESTS)/prm \
 		$(MANIFESTS)/psx \
 		$(MANIFESTS)/ref \
@@ -2921,6 +2955,7 @@ SUPPORTED_COMPONENTS = \
 	$(MANIFESTS)/pcs \
 	$(MANIFESTS)/pda \
 	$(MANIFESTS)/pgp \
+	$(MANIFESTS)/pgplot \
 	$(MANIFESTS)/photom \
 	$(MANIFESTS)/polpack \
 	$(MANIFESTS)/prm \
